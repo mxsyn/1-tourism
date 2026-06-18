@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery — Discover Patnanungan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Nunito:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<nav><ul class="nav-links" id="navLinks">
+  <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+  <li><a href="activities.html">Activities</a></li><li><a href="attractions.html">Attractions</a></li>
+  <li><a href="accommodations.html">Accommodations</a></li><li><a href="culture-food.html">Food &amp; Culture</a></li>
+  <li><a href="guide.html">Guide</a></li><li><a href="gallery.html" class="active">Gallery</a></li>
+  <li><a href="contact.html">Contact</a></li><li><a href="docs.html">Docs</a></li>
+</ul><a href="admin/login.html" class="nav-book">Admin Login</a>
+<button class="nav-toggle" id="navToggle" onclick="toggleNav()"><span></span><span></span><span></span></button></nav>
+
+<div class="page-hero">
+  <span class="ph-tag">Visual Journey</span>
+  <h1>Gallery</h1>
+  <p>A visual collection of Patnanungan's beaches, people, food, and island life.</p>
+</div>
+
+<div class="content-wrap">
+  <div class="gallery-tabs">
+    <div class="g-tab active" onclick="filterGallery('all',this)">All</div>
+    <div class="g-tab" onclick="filterGallery('beaches',this)">🏖️ Beaches</div>
+    <div class="g-tab" onclick="filterGallery('activities',this)">🤿 Activities</div>
+    <div class="g-tab" onclick="filterGallery('culture',this)">🎊 Culture</div>
+    <div class="g-tab" onclick="filterGallery('food',this)">🐟 Food</div>
+    <div class="g-tab" onclick="filterGallery('community',this)">👨‍👩‍👧 Community</div>
+  </div>
+  <div class="gallery-grid" id="galleryGrid">
+    <div class="g-item g-b1" data-cat="beaches">🌊<div class="g-label">White Beach at Dawn</div></div>
+    <div class="g-item g-b2" data-cat="beaches">🌅<div class="g-label">Compra Beach Sunset</div></div>
+    <div class="g-item g-b3" data-cat="beaches">🐚<div class="g-label">Pulang Lupa Shore</div></div>
+    <div class="g-item g-b7" data-cat="beaches">🏝️<div class="g-label">Island Sandbar</div></div>
+    <div class="g-item g-b4" data-cat="activities">⛵<div class="g-label">Bangka Ride</div></div>
+    <div class="g-item g-b5" data-cat="activities">🤿<div class="g-label">Snorkeling the Reef</div></div>
+    <div class="g-item g-b6" data-cat="activities">🎣<div class="g-label">Fishing at Sunrise</div></div>
+    <div class="g-item g-b8" data-cat="activities">⛺<div class="g-label">Beach Camping Night</div></div>
+    <div class="g-item g-b3" data-cat="culture">🎊<div class="g-label">Barangay Fiesta</div></div>
+    <div class="g-item g-b1" data-cat="culture">🏺<div class="g-label">Local Handicrafts</div></div>
+    <div class="g-item g-b8" data-cat="food">🦀<div class="g-label">Freshly Caught Crabs</div></div>
+    <div class="g-item g-b2" data-cat="food">🐟<div class="g-label">Morning Fish Market</div></div>
+    <div class="g-item g-b5" data-cat="community">👨‍👩‍👧<div class="g-label">Island Families</div></div>
+    <div class="g-item g-b7" data-cat="community">🌾<div class="g-label">Farm &amp; Harvest</div></div>
+    <div class="g-item g-b6" data-cat="community">⚓<div class="g-label">Fishermen at Port</div></div>
+    <div class="g-item g-b4" data-cat="beaches">🌸<div class="g-label">Coastal Flowers</div></div>
+  </div>
+</div>
+
+<footer><div class="f-brand">Discover Patnanungan</div><p>Municipality of Patnanungan · Quezon Province · Philippines</p><p style="margin-top:1rem;font-size:0.72rem;">© 2025 Patnanungan Tourism. All rights reserved.</p></footer>
+<button class="back-top" id="backTop" onclick="scrollToTop()">↑</button>
+<script src="css/main.js"></script>
+</body>
+</html>

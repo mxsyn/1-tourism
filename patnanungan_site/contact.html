@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Discover Patnanungan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Nunito:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<nav><ul class="nav-links" id="navLinks">
+  <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+  <li><a href="activities.html">Activities</a></li><li><a href="attractions.html">Attractions</a></li>
+  <li><a href="accommodations.html">Accommodations</a></li><li><a href="culture-food.html">Food &amp; Culture</a></li>
+  <li><a href="guide.html">Guide</a></li><li><a href="gallery.html">Gallery</a></li>
+  <li><a href="contact.html" class="active">Contact</a></li><li><a href="docs.html">Docs</a></li>
+</ul><a href="admin/login.html" class="nav-book">Admin Login</a>
+<button class="nav-toggle" id="navToggle" onclick="toggleNav()"><span></span><span></span><span></span></button></nav>
+
+<div class="page-hero">
+  <span class="ph-tag">Get in Touch</span>
+  <h1>Contact &amp; Assistance</h1>
+  <p>Planning a trip or need local information? The Patnanungan Tourism Office is here to help.</p>
+</div>
+
+<div class="content-wrap">
+  <div class="contact-grid">
+    <!-- LEFT: Info -->
+    <div>
+      <div class="contact-box">
+        <h3>🏛️ Municipal Tourism Office</h3>
+        <div class="contact-item"><div class="ci-icon">📍</div><div><strong>Address</strong><span>Municipal Hall, Poblacion, Patnanungan, Quezon Province, Philippines</span></div></div>
+        <div class="contact-item"><div class="ci-icon">📞</div><div><strong>Phone</strong><span>Contact through Quezon Province local government directory</span></div></div>
+        <div class="contact-item"><div class="ci-icon">⏰</div><div><strong>Office Hours</strong><span>Monday–Friday, 8:00 AM – 5:00 PM (closed on holidays)</span></div></div>
+      </div>
+      <div class="contact-box">
+        <h3>🚨 Emergency Contacts</h3>
+        <div class="contact-item"><div class="ci-icon">🚔</div><div><strong>Police (PNP)</strong><span>Patnanungan Police Station — coordinate via municipal hall</span></div></div>
+        <div class="contact-item"><div class="ci-icon">🏥</div><div><strong>Health Center</strong><span>Patnanungan Rural Health Unit — Poblacion</span></div></div>
+        <div class="contact-item"><div class="ci-icon">⛑️</div><div><strong>National Emergency</strong><span>911 (National) · Philippine Coast Guard via Real Port</span></div></div>
+      </div>
+      <div class="contact-box">
+        <h3>📱 Social Media</h3>
+        <p style="font-size:0.88rem;color:var(--muted);margin-bottom:1rem;">Follow official channels for the latest updates on ferries, events, and travel advisories.</p>
+        <div class="social-links"><a href="#" class="social-link">📘 Facebook</a><a href="#" class="social-link">📸 Instagram</a></div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Form + FAQ -->
+    <div>
+      <!-- In production: action="php/submit_inquiry.php" method="POST" -->
+      <div class="inquiry-form">
+        <h3>✉️ Tourism Inquiry Form</h3>
+        <div class="form-group"><label>Full Name</label><input type="text" id="f-name" placeholder="Juan dela Cruz"></div>
+        <div class="form-group"><label>Email Address</label><input type="email" id="f-email" placeholder="juan@example.com"></div>
+        <div class="form-group"><label>Type of Inquiry</label>
+          <select id="f-type">
+            <option value="">Select inquiry type…</option>
+            <option>Accommodation Recommendations</option>
+            <option>Transportation &amp; Ferry Schedule</option>
+            <option>Island Hopping &amp; Activities</option>
+            <option>Festival &amp; Events Schedule</option>
+            <option>General Travel Information</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Planned Visit Date</label><input type="date" id="f-date"></div>
+        <div class="form-group"><label>Message</label><textarea id="f-msg" placeholder="Tell us how we can help you plan your Patnanungan trip…"></textarea></div>
+        <button class="submit-btn" onclick="return submitForm()">Send Inquiry 🌺</button>
+        <div class="form-success" id="formSuccess">✅ Thank you! Your inquiry has been received. We'll get back to you within 1–2 business days.</div>
+      </div>
+
+      <div style="margin-top:2rem;">
+        <h2 class="section-title" style="margin-top:0;">Frequently Asked <span>Questions</span></h2>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How long does the ferry take from Real to Patnanungan?</div><div class="faq-a">The ferry crossing from Real, Quezon to Patnanungan takes approximately 3–4 hours depending on sea conditions and the type of vessel. Ferries typically depart early in the morning. Always confirm current schedules with the Real municipal port.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Is there an ATM or internet on the island?</div><div class="faq-a">Currently, there are no ATMs on Patnanungan. Bring sufficient Philippine Peso cash for your entire stay. Mobile data signal is available in some areas but can be limited — download offline maps and important information before departing for the island.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What's the best season to visit?</div><div class="faq-a">November to May is the recommended period. December to February offers the calmest seas and clearest water. June to October is typhoon and monsoon season — sea travel can be disrupted, so plan around the amihan season for the safest experience.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Do I need to book accommodations in advance?</div><div class="faq-a">Advance booking is strongly recommended, especially during peak season (December–February) and around festival dates. Most accommodations don't have online booking — contact the municipal tourism office for a referral to available lodgings.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I go island hopping on my own?</div><div class="faq-a">You can arrange bangka rentals with local boatmen at the port. It's highly recommended to hire a guide who knows the waters well, especially if you're visiting outer islets or snorkeling sites. Always inform someone at your accommodation before heading out.</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer><div class="f-brand">Discover Patnanungan</div><p>Municipality of Patnanungan · Quezon Province · Philippines</p><p style="margin-top:1rem;font-size:0.72rem;">© 2025 Patnanungan Tourism. All rights reserved.</p></footer>
+<button class="back-top" id="backTop" onclick="scrollToTop()">↑</button>
+<script src="css/main.js"></script>
+</body>
+</html>

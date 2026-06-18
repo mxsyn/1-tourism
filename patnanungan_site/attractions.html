@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Attractions — Discover Patnanungan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Nunito:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<nav>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="activities.html">Activities</a></li><li><a href="attractions.html" class="active">Attractions</a></li>
+    <li><a href="accommodations.html">Accommodations</a></li><li><a href="culture-food.html">Food &amp; Culture</a></li>
+    <li><a href="guide.html">Guide</a></li><li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html">Contact</a></li><li><a href="docs.html">Docs</a></li>
+  </ul>
+  <a href="admin/login.html" class="nav-book">Admin Login</a>
+  <button class="nav-toggle" id="navToggle" onclick="toggleNav()"><span></span><span></span><span></span></button>
+</nav>
+<div class="page-hero">
+  <span class="ph-tag">Tourist Destinations</span>
+  <h1>Beaches &amp; Attractions</h1>
+  <p>From pristine white-sand shores to secluded coves — Patnanungan's coastline is its greatest treasure.</p>
+</div>
+<div class="content-wrap">
+  <div class="attraction-card">
+    <div class="attr-visual beach1">🌊</div>
+    <div class="attr-body">
+      <p class="attr-meta">📍 Patnanungan · Main Beach</p>
+      <h3>White Beach</h3>
+      <p>Patnanungan's most celebrated stretch of shoreline — fine white sand meeting calm azure waters that shift from pale turquoise to deep blue at the reef edge. The island's primary beach destination and natural gathering place for visitors and locals alike.</p>
+      <p>Ideal for swimming, leisurely wading, and unwinding under coconut shade. At low tide the exposed sandbar extends further, offering a walking path flanked by warm shallow waters. Sunrise here is particularly stunning.</p>
+      <div class="tag-row"><span class="act-tag">🏊 Swimming</span><span class="act-tag">☀️ Sunbathing</span><span class="act-tag">🌅 Sunrise Viewing</span><span class="act-tag">👣 Sandbar Walking</span><span class="act-tag">📷 Photography</span></div>
+    </div>
+  </div>
+  <div class="attraction-card">
+    <div class="attr-visual beach2">🌅</div>
+    <div class="attr-body">
+      <p class="attr-meta">📍 Patnanungan · West Side</p>
+      <h3>Compra Beach</h3>
+      <p>Named after the local trading activity historically tied to this area, Compra Beach is beloved for its spectacular sunset views. Facing westward, the beach becomes a canvas of warm oranges and purples as the sun dips toward the horizon each evening.</p>
+      <p>Slightly coarser sand and more dramatic rock formations than White Beach lend it a wilder, more photogenic character. Fishermen's boats moored along the shore add an authentic cultural dimension.</p>
+      <div class="tag-row"><span class="act-tag">🌇 Sunset Viewing</span><span class="act-tag">📷 Photography</span><span class="act-tag">⛵ Boat Watching</span><span class="act-tag">🚶 Beach Walk</span></div>
+    </div>
+  </div>
+  <div class="attraction-card">
+    <div class="attr-visual beach3">🐚</div>
+    <div class="attr-body">
+      <p class="attr-meta">📍 Patnanungan · Southeast</p>
+      <h3>Pulang Lupa Beach</h3>
+      <p>Pulang Lupa — literally "red earth" — earns its name from distinctive reddish-tinged sand and soil that color its shoreline. This geological quirk makes it unlike any other beach in the Polillo group, attracting curious travelers and nature enthusiasts.</p>
+      <p>Beyond its unique visual character, Pulang Lupa sits adjacent to some of the island's healthiest coral patches, often rewarding snorkelers with colorful reef fish, sea urchins, and occasional sea turtles.</p>
+      <div class="tag-row"><span class="act-tag">🤿 Snorkeling</span><span class="act-tag">🐠 Marine Life</span><span class="act-tag">📷 Photography</span><span class="act-tag">🏊 Swimming</span></div>
+    </div>
+  </div>
+  <div class="attraction-card">
+    <div class="attr-visual coastal">⛵</div>
+    <div class="attr-body">
+      <p class="attr-meta">📍 Surrounding Waters · Various Islands</p>
+      <h3>Surrounding Islands &amp; Coastal Areas</h3>
+      <p>Patnanungan's waters are dotted with smaller islets, sandbars, and rock formations accessible by bangka (outrigger boat). Island hopping tours organized by local boatmen take visitors on half-day or full-day excursions to satellite destinations.</p>
+      <p>The mangrove-lined channels between islands are particularly interesting for nature lovers — home to migratory birds, mudskippers, and juvenile fish that use the mangrove roots as nurseries.</p>
+      <div class="tag-row"><span class="act-tag">🗺️ Island Hopping</span><span class="act-tag">⛵ Boating</span><span class="act-tag">🌿 Mangrove</span><span class="act-tag">🎣 Fishing</span><span class="act-tag">🦅 Bird Watching</span></div>
+    </div>
+  </div>
+</div>
+<footer><div class="f-brand">Discover Patnanungan</div><p>Municipality of Patnanungan · Quezon Province · Philippines</p><p style="margin-top:1rem;font-size:0.72rem;">© 2025 Patnanungan Tourism. All rights reserved.</p></footer>
+<button class="back-top" id="backTop" onclick="scrollToTop()">↑</button>
+<script src="css/main.js"></script>
+</body>
+</html>

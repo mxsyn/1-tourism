@@ -1,0 +1,11 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "pwa-chrome",
+      "request": "launch",
+      "name": "Open about.html",
+      "file": "d:/1 tourism/patnanungan_site/about.html"
+    }
+  ]
+}
