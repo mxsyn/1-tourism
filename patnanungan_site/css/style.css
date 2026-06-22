@@ -1192,3 +1192,33 @@ footer p { font-size: 0.82rem; margin-bottom: 0.3rem; }
    padding: 0.1rem 1rem;
    margin-bottom: 0.8rem;
 }
+
+.g-item {
+  position: relative;
+  overflow: hidden;
+}
+
+/* IMAGE fills the tile */
+.g-item img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  transition: transform 0.4s ease;
+}
+
+/* hover zoom effect */
+.g-item:hover img {
+  transform: scale(1.1);
+}
+
+/* keep label above image */
+.g-item .g-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
