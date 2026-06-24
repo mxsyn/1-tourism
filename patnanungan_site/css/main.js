@@ -44,29 +44,64 @@ function filterGallery(cat, tab) {
 
 /* ── CONTACT FORM VALIDATION (client-side) ─── */
 function submitForm() {
-  const name  = document.getElementById('f-name')?.value.trim();
-  const email = document.getElementById('f-email')?.value.trim();
-  const type  = document.getElementById('f-type')?.value;
-  const msg   = document.getElementById('f-msg')?.value.trim();
+    const name  = document.getElementById('f-name')?.value.trim();
+    const email = document.getElementById('f-email')?.value.trim();
+    const type  = document.getElementById('f-type')?.value;
+    const date  = document.getElementById('f-date')?.value;
+    const msg   = document.getElementById('f-msg')?.value.trim();
 
-  if (!name)  { alert('Please enter your full name.'); return false; }
-  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    alert('Please enter a valid email address.'); return false;
-  }
-  if (!type)  { alert('Please select an inquiry type.'); return false; }
-  if (!msg)   { alert('Please enter your message.'); return false; }
+    // Validation
+    if (!name) { 
+        alert('Please enter your full name.'); 
+        return false; 
+    }
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        alert('Please enter a valid email address.'); 
+        return false; 
+    }
+    if (!type) { 
+        alert('Please select an inquiry type.'); 
+        return false; 
+    }
+    if (!msg) { 
+        alert('Please enter your message.'); 
+        return false; 
+    }
 
-  // In production: form submits to contact.php POST handler
-  // For demo: show success message
-  const success = document.getElementById('formSuccess');
-  if (success) {
-    success.style.display = 'block';
-    ['f-name','f-email','f-type','f-date','f-msg'].forEach(id => {
-      const el = document.getElementById(id);
-      if (el) el.value = '';
+    // Send to backend
+    fetch('submit_inquiry.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({
+            'full_name': name,
+            'email_address': email,
+            'inquiry_type': type,
+            'planned_visit_date': date,
+            'message': msg
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            const success = document.getElementById('formSuccess');
+            if (success) {
+                success.style.display = 'block';
+                success.textContent = '✅ ' + data.message;
+            }
+            ['f-name','f-email','f-type','f-date','f-msg'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.value = '';
+            });
+        } else {
+            alert('Error: ' + data.message);
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('An error occurred. Please try again.');
     });
-  }
-  return false; // prevent default submit in demo
+    
+    return false;
 }
 
 /* ── DOC MODAL ─── */
