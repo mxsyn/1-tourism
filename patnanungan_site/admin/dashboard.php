@@ -175,6 +175,42 @@ $inquiries = get_inquiries($pdo);
             font-size: 0.85rem;
             margin-top: 5px;
         }
+        
+        .action-buttons {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .btn {
+            padding: 6px 12px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+        }
+        
+        .btn-respond {
+            background: #00BFA5;
+            color: white;
+        }
+        
+        .btn-respond:hover {
+            background: #006D77;
+            transform: translateY(-2px);
+            box-shadow: 0 2px 8px rgba(0, 137, 123, 0.3);
+        }
+        
+        .btn-view {
+            background: #E0E0E0;
+            color: #333;
+        }
+        
+        .btn-view:hover {
+            background: #BDBDBD;
+        }
     </style>
 </head>
 <body>
@@ -182,7 +218,7 @@ $inquiries = get_inquiries($pdo);
         <!-- HEADER -->
         <div class="header">
             <div>
-                <h1>📊 Admin Dashboard</h1>
+                <h1>Admin Dashboard</h1>
                 <p style="color: #666; margin-top: 5px;">Manage your Patnanungan tourism portal</p>
             </div>
             <div class="user-info">
@@ -229,6 +265,7 @@ $inquiries = get_inquiries($pdo);
                             <th>Visit Date</th>
                             <th>Status</th>
                             <th>Submitted</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -245,6 +282,13 @@ $inquiries = get_inquiries($pdo);
                                 </span>
                             </td>
                             <td><?php echo date('M d, Y', strtotime($inquiry['submitted_at'])); ?></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <a href="view_inquiry.php?id=<?php echo $inquiry['inquiry_id']; ?>" class="btn btn-respond">
+                                        <?php echo $inquiry['status'] === 'responded' ? '✎ Update' : '✓ Respond'; ?>
+                                    </a>
+                                </div>
+                            </td>
                         </tr>
                         <?php endforeach; ?>
                     </tbody>
